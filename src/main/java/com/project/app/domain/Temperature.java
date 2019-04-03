@@ -13,7 +13,7 @@ public class Temperature {
     private double upperBearingTemp;
     private double lowerBearingTemp;
 
-    public Temperature() {
+    public Temperature(Long id, double upperBearingTemp, double lowerBearingTemp) {
     }
 
     public Temperature(double upperBearingTemp, double lowerBearingTemp) {

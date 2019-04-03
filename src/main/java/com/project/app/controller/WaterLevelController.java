@@ -1,5 +1,6 @@
 package com.project.app.controller;
 
+import com.project.app.domain.WaterLevel;
 import com.project.app.domain.WaterLevelDto;
 import com.project.app.mapper.WaterLevelMapper;
 import com.project.app.service.DbService;
@@ -19,26 +20,28 @@ public class WaterLevelController {
     private WaterLevelMapper waterLevelMapper;
 
     @RequestMapping(method = RequestMethod.GET, value = "getWaters")
-    public List<WaterLevelDto> getWaters(){
+    public List<WaterLevelDto> getWaters() {
         return waterLevelMapper.mapToWaterLevelDtoList(service.getAllWaters());
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "getWater")
-    public WaterLevelDto getSpeed(@RequestParam Long waterId) throws WaterLevelNotFoundException{
+    public WaterLevelDto getWater(@RequestParam Long waterId) throws WaterLevelNotFoundException {
         return waterLevelMapper.mapToWaterLevelDto(service.getWater(waterId).orElseThrow(WaterLevelNotFoundException::new));
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "deleteSpeed")
-    public void deleteSpeed(@RequestParam Long speedId){
-        service.deleteSpeed(speedId);
+    @RequestMapping(method = RequestMethod.DELETE, value = "deleteWater")
+    public void deleteWater(@RequestParam Long waterId) {
+        service.deleteWater(waterId);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "updateSpeed")
-    public SpeedDto updateSpeed(@RequestBody SpeedDto speedDto){
-        return speedMapper.mapToSpeedDto(service.saveSpeed(speedMapper.mapToSpeed(speedDto)));
+    @RequestMapping(method = RequestMethod.PUT, value = "updateWater")
+    public WaterLevelDto updateWater(@RequestBody WaterLevelDto waterLevelDto) {
+        return waterLevelMapper.mapToWaterLevelDto(service.saveWaterLevel(waterLevelMapper.mapToWaterLevel(waterLevelDto)));
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "createSpeed")
-    public void createSpeed(SpeedDto speedDto){
+    @RequestMapping(method = RequestMethod.POST, value = "createWater")
+    public void createWater(WaterLevelDto waterLevelDtoDto) {
 
     }
+
+}
