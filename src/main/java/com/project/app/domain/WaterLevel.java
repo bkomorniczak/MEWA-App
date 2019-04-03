@@ -13,7 +13,7 @@ public class WaterLevel {
     private double upperWaterLevel;
     private double lowerWaterLevel;
 
-    public WaterLevel() {
+    public WaterLevel(Long id, double upperWaterLevel, double lowerWaterLevel) {
     }
 
     public WaterLevel(double upperWaterLevel, double lowerWaterLevel) {

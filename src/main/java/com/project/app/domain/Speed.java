@@ -11,7 +11,7 @@ public class Speed {
     private double TurbineSpeed;
     private double GeneratorSpeed;
 
-    public Speed() {
+    public Speed(Long id, double turbineSpeed, double generatorSpeed) {
     }
 
     public Speed(double turbineSpeed, double generatorSpeed) {
@@ -47,4 +47,5 @@ public class Speed {
     public void setGeneratorSpeed(double generatorSpeed) {
         GeneratorSpeed = generatorSpeed;
     }
+
 }

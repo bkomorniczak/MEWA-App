@@ -5,14 +5,15 @@ import com.project.app.domain.PowerDto;
 import com.project.app.mapper.PowerMapper;
 import com.project.app.service.DbService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/MEW")
+@RequestMapping("/MEW/power")
 public class PowerController {
 
     @Autowired
@@ -20,12 +21,12 @@ public class PowerController {
     @Autowired
     private PowerMapper powerMapper;
 
-    @RequestMapping(method = RequestMethod.GET, value = "powers")
+    @RequestMapping(method = RequestMethod.GET, value = "getPowers")
     public List<PowerDto>getPowers(){
         return powerMapper.mapToPowerDtoList(service.getAllPower());
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "power")
+    @RequestMapping(method = RequestMethod.GET, value = "getPower")
     public PowerDto getPower(@RequestParam Long powerId) throws PowerNotFoundException{
         return powerMapper.mapToPowerDto(service.getPower(powerId).orElseThrow(PowerNotFoundException::new));
     }
