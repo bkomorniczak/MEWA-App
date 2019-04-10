@@ -1,11 +1,16 @@
 package com.project.app.domain;
 
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "WaterLevel")
+@AllArgsConstructor
+@NoArgsConstructor
 public class WaterLevel {
 
 
@@ -13,13 +18,6 @@ public class WaterLevel {
     private double upperWaterLevel;
     private double lowerWaterLevel;
 
-    public WaterLevel(Long id, double upperWaterLevel, double lowerWaterLevel) {
-    }
-
-    public WaterLevel(double upperWaterLevel, double lowerWaterLevel) {
-        this.upperWaterLevel = upperWaterLevel;
-        this.lowerWaterLevel = lowerWaterLevel;
-    }
 
     @Id
     @GeneratedValue

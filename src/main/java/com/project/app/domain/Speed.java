@@ -1,23 +1,23 @@
 package com.project.app.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Speed")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Speed {
 
     private Long id;
     private double TurbineSpeed;
     private double GeneratorSpeed;
 
-    public Speed(Long id, double turbineSpeed, double generatorSpeed) {
-    }
 
-    public Speed(double turbineSpeed, double generatorSpeed) {
-        TurbineSpeed = turbineSpeed;
-        GeneratorSpeed = generatorSpeed;
-    }
+
 
     @Id
     @GeneratedValue

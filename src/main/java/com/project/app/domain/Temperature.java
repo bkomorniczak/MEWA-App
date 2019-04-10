@@ -1,11 +1,16 @@
 package com.project.app.domain;
 
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="Temperature")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Temperature {
 
 
@@ -13,13 +18,7 @@ public class Temperature {
     private double upperBearingTemp;
     private double lowerBearingTemp;
 
-    public Temperature(Long id, double upperBearingTemp, double lowerBearingTemp) {
-    }
 
-    public Temperature(double upperBearingTemp, double lowerBearingTemp) {
-        this.upperBearingTemp = upperBearingTemp;
-        this.lowerBearingTemp = lowerBearingTemp;
-    }
 
     @Id
     @GeneratedValue

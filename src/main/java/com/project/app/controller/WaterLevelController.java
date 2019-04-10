@@ -40,7 +40,7 @@ public class WaterLevelController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "createWater")
-    public void createWater(WaterLevelDto waterLevelDtoDto) {
+    public void createWater(WaterLevelDto waterLevelDto) {
 
     }
 

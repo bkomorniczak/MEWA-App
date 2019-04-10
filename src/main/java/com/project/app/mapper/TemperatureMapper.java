@@ -26,7 +26,7 @@ public class TemperatureMapper {
     }
 
     public List<TemperatureDto> mapToTemperatureDtoList(final List<Temperature> temperatureList){
-        return temperatureList.stream().map(p -> new TemperatureDto(p.getId(), p.getLowerBearingTemp(),p.getLowerBearingTemp())).collect(Collectors.toList());
+        return temperatureList.stream().map(p -> new TemperatureDto(p.getId(), p.getUpperBearingTemp(),p.getLowerBearingTemp())).collect(Collectors.toList());
     }
 
 }

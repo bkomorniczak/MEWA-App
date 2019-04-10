@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MEWA</title>
+    <title>Poziom wody</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=latin-ext" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -26,16 +27,48 @@
         </div>
     </div>
 </nav>
-</br>
-</br>
+
 <div class = "pageContentWrapper">
-<div class="container text-center">
-<h1>Podgląd danych pochodzących z Małej Elektrowni Wodnej</h1>
-<h2>Projekt realizowany w ramach pracy inżynierskiej pt. "Zastosowanie usług sieciowych w aplikacjach internetowych.</h2>
+
+<div class="jumbotron">
+    <h1>Water</h1>
 </div>
+
+
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-lg-6">
+            <table id = "waterListTable" class="table table-bordered table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Lower Water Levels</th>
+                    <th>Upper Water Levels</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="chart">
+                <canvas id="canvas_red"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
 </div>
 <footer class="container-fluid text-center">
-    MEWApp Barbara Komorniczak
+    <p>MEWApp Barbara Komorniczak</p>
 </footer>
+
+
+
 </body>
+<script src="water.js"></script>
+<script src="water_chart.js"></script>
 </html>

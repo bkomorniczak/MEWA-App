@@ -19,5 +19,5 @@ for(var i = 0; i < powerList.length; i++){
 })
 })
 
-var powerData = {id:null, powerValue:1};
-var powerJSON = JSON.stringify(powerData);
+/*var powerData = {id:null, powerValue:1};
+var powerJSON = JSON.stringify(powerData);*/

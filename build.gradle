@@ -23,5 +23,5 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    compile("org.springframework.boot:spring-boot-starter-security")
+   // compile("org.springframework.boot:spring-boot-starter-security")
 }
